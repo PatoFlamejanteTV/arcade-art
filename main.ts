@@ -1,10 +1,11 @@
 namespace SpriteKind {
     export const PaintBrush = SpriteKind.create()
 }
+
 let i = 0
 let mySprite = sprites.create(img`
-    1 
-    `, SpriteKind.Player)
+    1
+`, SpriteKind.Player)
 mySprite.setBounceOnWall(true)
 mySprite.startEffect(effects.spray)
 mySprite.startEffect(effects.trail)
@@ -23,8 +24,10 @@ mySprite.startEffect(effects.blizzard)
 mySprite.startEffect(effects.bubbles)
 mySprite.startEffect(effects.starField)
 mySprite.startEffect(effects.clouds)
-game.onUpdate(function () {
+game.onUpdate(function on_on_update() {
+    
     i += 1
+    //  kinda hard to explain, changing to add more than 1 makes the spin thing faster
     mySprite.x += Math.cos(i) * randint(10, 50)
     mySprite.y += Math.sin(i) * randint(10, 50)
 })
